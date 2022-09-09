@@ -8,6 +8,12 @@
 #
 ##############################################################################
 
-from . import hr_employee
+from odoo import models, fields
+
+
+class ProductTemplate(models.Model):
+    _inherit = 'product.template'
+
+    tag_ids = fields.Many2many('product.tags', string='Tags')
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
